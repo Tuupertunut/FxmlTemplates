@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<#assign licenseFirst = "<!--">
+<#assign licensePrefix = "">
+<#assign licenseLast = "-->">
+<#include "${project.licensePath}">
+
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root id="AnchorPane" prefHeight="200.0" prefWidth="200.0" type="AnchorPane" xmlns:fx="http://javafx.com/fxml/1" />

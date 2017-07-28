@@ -1,0 +1,64 @@
+/*
+ * The MIT License
+ *
+ * Copyright 2017 Tuupertunut.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+package tuupertunut.fxmltemplates;
+
+import java.io.IOException;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+import org.netbeans.spi.project.ui.templates.support.Templates;
+import org.openide.filesystems.FileObject;
+import org.openide.loaders.DataFolder;
+import org.openide.loaders.DataObject;
+
+/**
+ *
+ * @author Tuupertunut
+ */
+public class FxmlNodeIterator extends BaseJavaIterator {
+
+    @Override
+    public Set<FileObject> instantiate() throws IOException {
+        FileObject targetFolder = Templates.getTargetFolder(wizard);
+        FileObject javaTemplate = Templates.getTemplate(wizard);
+
+        /* Retrieving the FXML template relative to the java template. */
+        FileObject fxmlTemplate = javaTemplate.getParent().getFileObject("FxmlNode.fxml");
+
+        String className = Templates.getTargetName(wizard);
+        String fxmlName = className;
+
+        DataFolder targetFolderData = DataFolder.findFolder(targetFolder);
+        DataObject javaTemplateData = DataObject.find(javaTemplate);
+        DataObject fxmlTemplateData = DataObject.find(fxmlTemplate);
+
+        DataObject createdJavaFileData = javaTemplateData.createFromTemplate(targetFolderData, className, Collections.singletonMap("fxmlName", fxmlName));
+        DataObject createdFxmlFileData = fxmlTemplateData.createFromTemplate(targetFolderData, fxmlName);
+
+        Set<FileObject> files = new HashSet<>();
+        files.add(createdJavaFileData.getPrimaryFile());
+        files.add(createdFxmlFileData.getPrimaryFile());
+        return files;
+    }
+}

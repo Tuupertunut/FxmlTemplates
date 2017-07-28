@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="Templates">
+        <folder name="javafx">
+            <file name="FxmlNode.java" url="nbresloc:/tuupertunut/fxmltemplates/templates/FxmlNode.java.template">
+                <attr name="template" boolvalue="true"/>
+                <attr name="displayName" bundlevalue="tuupertunut.fxmltemplates.Bundle#FxmlNode_displayName"/>
+                <attr name="iconBase" stringvalue="org/netbeans/spi/java/project/support/ui/templates/class.png"/>
+                <attr name="instantiatingWizardURL" urlvalue="nbresloc:/tuupertunut/fxmltemplates/FxmlNodeDescription.html"/>
+                <attr name="instantiatingIterator" newvalue="tuupertunut.fxmltemplates.FxmlNodeIterator"/>
+                <attr name="requireProject" boolvalue="true"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+            </file>
+            <file name="FxmlNode.fxml" url="nbresloc:/tuupertunut/fxmltemplates/templates/FxmlNode.fxml.template">
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+            </file>
+            <file name="FxmlApp.java" url="nbresloc:/tuupertunut/fxmltemplates/templates/FxmlApp.java.template">
+                <attr name="template" boolvalue="true"/>
+                <attr name="displayName" bundlevalue="tuupertunut.fxmltemplates.Bundle#FxmlApp_displayName"/>
+                <attr name="iconBase" stringvalue="org/netbeans/spi/java/project/support/ui/templates/class.png"/>
+                <attr name="instantiatingWizardURL" urlvalue="nbresloc:/tuupertunut/fxmltemplates/FxmlAppDescription.html"/>
+                <attr name="instantiatingIterator" newvalue="tuupertunut.fxmltemplates.FxmlAppIterator"/>
+                <attr name="requireProject" boolvalue="true"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+            </file>
+        </folder>
+    </folder>
+</filesystem>
