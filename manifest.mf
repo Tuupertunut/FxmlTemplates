@@ -1,8 +1,0 @@
-Manifest-Version: 1.0
-AutoUpdate-Show-In-Client: true
-OpenIDE-Module: tuupertunut.fxmltemplates
-OpenIDE-Module-Layer: tuupertunut/fxmltemplates/layer.xml
-OpenIDE-Module-Localizing-Bundle: tuupertunut/fxmltemplates/Bundle.properties
-OpenIDE-Module-Needs: org.netbeans.api.templates.wizard, javax.script.ScriptEngine.freemarker
-OpenIDE-Module-Specification-Version: 1.0
-
