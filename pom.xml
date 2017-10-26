@@ -16,6 +16,25 @@
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>read-project-properties</goal>
+                        </goals>
+                        <configuration>
+                            <files>
+                                <file>keystore/pass.properties</file>
+                            </files>
+                            <quiet>true</quiet>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
                 <artifactId>nbm-maven-plugin</artifactId>
                 <version>3.14.1</version>
                 <extensions>true</extensions>
@@ -23,8 +42,9 @@
                     <author>Tuupertunut</author>
                     <licenseName>MIT License</licenseName>
                     <licenseFile>LICENSE.md</licenseFile>
-                    <keystore>mykeystore</keystore>
-                    <keystorealias>myself</keystorealias>
+                    <keystore>keystore/keystore</keystore>
+                    <keystorealias>tuupertunut</keystorealias>
+                    <keystorepassword>${keystorepass}</keystorepassword>
                 </configuration>
             </plugin>
             <plugin>
